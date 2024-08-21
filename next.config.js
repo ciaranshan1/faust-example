@@ -1,10 +1,11 @@
 const { withFaust, getWpHostname } = require('@faustwp/core');
 const { createSecureHeaders } = require('next-secure-headers');
+const { withAtlasConfig } = require("@wpengine/atlas-next");
 
 /**
  * @type {import('next').NextConfig}
  **/
-module.exports = withFaust({
+const nextConfig = withFaust({
   reactStrictMode: true,
   sassOptions: {
     includePaths: ['node_modules'],
@@ -22,3 +23,5 @@ module.exports = withFaust({
     }) }];
   },
 });
+
+module.exports = withAtlasConfig(nextConfig);
