@@ -13,10 +13,10 @@ const nextConfig = withFaust({
   images: {
     domains: [getWpHostname()],
   },
-  i18n: {
-    locales: ['en'],
-    defaultLocale: 'en',
-  },
+  // i18n: {
+  //   locales: ['en'],
+  //   defaultLocale: 'en',
+  // },
   async headers() {
     return [{ source: '/:path*', headers: createSecureHeaders({
       xssProtection: false
